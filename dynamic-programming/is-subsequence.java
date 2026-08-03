@@ -1,15 +1,21 @@
 class Solution {
     public boolean isSubsequence(String s, String t) {
-        List<Character> lis = new ArrayList<>();
-        for(int i=0; i<t.length(); i++){
-            lis.add(t.charAt(i));
-        }
-        for(int i=0; i<s.length(); i++){
-            if(!lis.contains(s.charAt(i))){
-                return false;
+        int m = t.length();
+        int i=0;
+        int j = 0;
+        int count = 0;
+        while(i<s.length() && j<t.length()){
+            if(s.charAt(i) == t.charAt(j)){
+                count++;
+                j++;
+                i++;
+            }else{
+                j++;
             }
-            lis.remove((Character)s.charAt(i));
         }
-        return true;
+        if(count==s.length()){
+            return true;
+        }
+        return false;
     } 
 }
