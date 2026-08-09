@@ -1,0 +1,35 @@
+public class Solution {
+    public void nextPermutation(int[] arr) {
+        int n = arr.length;
+        int index = -1;
+        for(int i=n-2; i>=0; i--){
+            if(arr[i]<arr[i+1]){
+                index = i;
+                break;
+            }
+        }
+        if(index == -1){
+            for(int i=0; i<n/2; i++){
+                int temp = arr[i];
+                arr[i] = arr[n-i-1];
+                arr[n-i-1] = temp;
+            }
+            return;
+        }
+        for(int i=n-1; i>=0; i--){
+            if(arr[i]>arr[index]){
+                int temp = arr[i];
+                arr[i] = arr[index];
+                arr[index] = temp;
+                break;
+            }
+        }
+        int left = index+1;
+        int right = n-1;
+        while(left<right){
+            int temp = arr[right];
+            arr[right] = arr[left];
+            arr[left] = temp;
+        }
+    }
+}
