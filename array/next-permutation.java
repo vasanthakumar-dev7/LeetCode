@@ -30,6 +30,8 @@ public class Solution {
             int temp = arr[right];
             arr[right] = arr[left];
             arr[left] = temp;
+            left++;
+            right--;
         }
     }
 }
