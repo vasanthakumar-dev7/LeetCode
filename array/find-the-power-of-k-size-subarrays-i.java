@@ -1,5 +1,8 @@
 class Solution {
     public int[] resultsArray(int[] nums, int k) {
+        if(nums.length == 1){
+            return nums;
+        }
         int[] res = new int[nums.length-k+1];
         for(int i=0; i<=nums.length-k; i++){
             boolean flag = false;
