@@ -2,7 +2,7 @@ import java.util.Arrays;
 class Solution {
     public int longestConsecutive(int[] nums) {
         if(nums.length <=1){
-            return nums.length0;
+            return nums.length;
         }
         HashMap<Integer, Integer> freq = new HashMap<>();
         for(int num : nums) freq.put(num, 0);
