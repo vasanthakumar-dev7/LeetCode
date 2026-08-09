@@ -9,9 +9,9 @@ class Solution {
                 c++;
             int rem = presum - k;
             if (freq.containsKey(rem)) {
-                c++;
+                c +=freq.get(rem);
             }
-            freq.put(presum, i);
+            freq.put(presum, freq.getOrDefault(presum, 0) + 1);
         }
         return c;
     }
