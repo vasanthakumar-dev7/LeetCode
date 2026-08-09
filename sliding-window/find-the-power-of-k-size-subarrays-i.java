@@ -1,6 +1,6 @@
 class Solution {
     public int[] resultsArray(int[] nums, int k) {
-        if(nums.length == 1){
+        if(nums.length == 1 || k==1){
             return nums;
         }
         int[] res = new int[nums.length-k+1];
